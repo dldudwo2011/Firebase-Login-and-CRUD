@@ -1,2 +1,6 @@
-# DMIT2008-OA04-assignment
-DMIT2008 assignment repository
+# DMIT2008
+
+Name: YoungjaeLee\
+Section: OA04\
+Instructor: Jim Foley\
+Purpose: Assignment repository
