@@ -22,9 +22,9 @@
   },
   "scripts": {
     "clean": "rm -rf node_modules build .git .env .DS_Store",
-    "static-netflify": "cp -rf ./src/static build",
+    "static-netflify": "cp -rf ./src/static static",
     "start": "react-scripts start",
-    "build": "npm run clean && react-scripts build && npm run static-netflify"
+    "build": "react-scripts build && npm run static-netflify"
   },
   "eslintConfig": {
     "extends": [
