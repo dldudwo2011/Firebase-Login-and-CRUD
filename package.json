@@ -21,7 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "static-netflify": "cp -rf ./src/static ./build",
+    "static-netflify": "cp -rf src/static build/static",
     "start": "react-scripts start",
     "build": "react-scripts build && npm run static-netflify",
     "clean": "rm -rf node_modules .git .env .DS_Store"
