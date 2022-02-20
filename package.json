@@ -21,10 +21,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "clean": "rm -rf node_modules .git .env .DS_Store",
+    "clean-netflify": "rm -rf .git node_modules .git build .DS_Store",
     "static-netflify": "cp -rf src/static build/static",
     "start": "react-scripts start",
     "build": "react-scripts build && npm run static-netflify",
-    "clean": "rm -rf node_modules .git .env .DS_Store"
+    "build-netflify": "npm run clean-netflify && npm run build"
   },
   "eslintConfig": {
     "extends": [
