@@ -22,9 +22,9 @@
   },
   "scripts": {
     "clean": "rm -rf node_modules .git .env .DS_Store",
-    "static-netflify": "cp -rf src/static/images build/static/images",
+    "static-netflify": "cp -rf ./src/static build",
     "start": "react-scripts start",
-    "build": "react-scripts build && static-netflify"
+    "build": "react-scripts build && npm run static-netflify"
   },
   "eslintConfig": {
     "extends": [
