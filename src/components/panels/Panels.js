@@ -41,7 +41,7 @@ function Panels(props) {
           <div className="card mx-3 my-3" style={cardWidth}>
             <img
               className="card-img-top"
-              src="../../static/images/mercurial-superfly-8-elite-fg-football-boots-jZbl4T(1).jpg"
+              src="static/images/mercurial-superfly-8-elite-fg-football-boots-jZbl4T(1).jpg"
               alt="foot-ball"
             />
             <div className="card-body top">
@@ -74,7 +74,7 @@ function Panels(props) {
           <div className="card mx-3 my-3" style={cardWidth}>
             <img
               className="card-img-top"
-              src="../../static/images/mercurial-vapor-14-elite-fg-football-boots-gSCd8q(2).jpg"
+              src="static/images/mercurial-vapor-14-elite-fg-football-boots-gSCd8q(2).jpg"
               alt="foot-ball"
             />
             <div className="card-body top">
@@ -107,7 +107,7 @@ function Panels(props) {
           <div className="card mx-3 my-3" style={cardWidth}>
             <img
               className="card-img-top"
-              src="../../static/images/mercurial-vapor-14-elite-sg-pro-anti-clog-traction-football-boots-WCZ2Sz(4).jpg"
+              src="static/images/mercurial-vapor-14-elite-sg-pro-anti-clog-traction-football-boots-WCZ2Sz(4).jpg"
               alt="foot-ball"
             />
             <div className="card-body top">
@@ -142,7 +142,7 @@ function Panels(props) {
           <div className="card mx-3 my-3" style={cardWidth}>
             <img
               className="card-img-top"
-              src="../../Namestatic/images/mercurial-vapor-14-elite-ag-artificial-ground-football-boots-nrsh5s.jpg"
+              src="static/images/mercurial-vapor-14-elite-ag-artificial-ground-football-boots-nrsh5s.jpg"
               alt="foot-ball"
             />
             <div className="card-body top">

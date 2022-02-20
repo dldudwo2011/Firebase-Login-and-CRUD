@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { NavBar } from "../../components/navbar";
+import { AppBar } from "../../components/appbar";
 
 import { FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
 
@@ -24,7 +24,7 @@ function LoginPage(props) {
 
   return (
     <>
-      <NavBar />
+      <AppBar />
       <section className="login d-flex align-items-center" style={styleObj}>
         <div className="container-fluid h-custom">
           <div className="row d-flex justify-content-center align-items-center h-100">

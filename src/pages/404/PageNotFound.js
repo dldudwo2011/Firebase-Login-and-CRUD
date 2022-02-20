@@ -1,27 +1,35 @@
- import React from 'react'
- 
- import {Link} from 'react-router-dom'
+import React from "react";
+import "./notFound.scss";
 
- import {NotFoundStyles} from './styles'
- function PageNotFound  (props){
-     return( 
-         <>
-         <NotFoundStyles>
-        <ul>
-             <li>
-                <Link to="/">back to saftey</Link>
-             </li>
+function PageNotFound(props) {
+  return (
+    <>
+      <div className="back-ground">
+        <div className="stage">
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+        </div>
+      </div>
+    </>
+  );
+}
 
-            
-         </ul>
-         <header>
-             <h1>
-               Page Not Found
-             </h1>
-         </header>
-         </NotFoundStyles>
-         </>
-     )
- }
- 
- export default PageNotFound 
+export default PageNotFound;

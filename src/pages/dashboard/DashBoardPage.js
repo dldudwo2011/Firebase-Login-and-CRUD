@@ -1,12 +1,12 @@
 import React from "react";
 
-import { NavBar } from "../../components/navbar";
+import { AppBar } from "../../components/appbar";
 import { SideBar } from "../../components/sidebar";
 
 function DashBoardPage(props) {
   return (
     <>
-      <NavBar />
+      <AppBar />
       <main>
         <div className="d-flex w-100 vh-100">
           <SideBar />
