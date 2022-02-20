@@ -25,9 +25,7 @@
     "clean-netflify": "rm -rf .git node_modules .git build .DS_Store",
     "static-netflify": "cp -rf src/static build/static",
     "start": "react-scripts start",
-    "react-build": "react-scripts build",
-    "build": "npm run react-build && npm run static-netflify",
-    "build-netflify": "npm run clean-netflify && npm run build"
+    "build": "react-scripts build && npm run static-netflify"
   },
   "eslintConfig": {
     "extends": [
