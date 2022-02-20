@@ -34,7 +34,7 @@ function SideBar(props) {
 
   const styleObj2 = {
     width: "15.5rem",
-    marginBottom: "11rem",
+    marginBottom: "19.5rem",
   };
   return (
     <div

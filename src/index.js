@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-
-import Head from "./Head";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 ReactDOM.render(
@@ -16,8 +14,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-ReactDOM.render(<Head />, document.head);
 
 const styles = document.createElement("style");
 
