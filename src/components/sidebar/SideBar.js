@@ -18,6 +18,8 @@ import { BiCategoryAlt, BiLogIn } from "react-icons/bi";
 
 import { FiPackage } from "react-icons/fi";
 
+import { useLocation } from "react-router-dom";
+
 function SideBar(props) {
   function clickHandler(e) {
     e.preventDefault();
@@ -27,6 +29,15 @@ function SideBar(props) {
       "position: absolute; inset: auto auto 0px 0px;margin: 0px; transform: translate(40px, -40px);"
     );
   }
+
+  //assigning location variable
+  const location = useLocation();
+
+  //destructuring pathname from location
+  const { pathname } = location;
+
+  //Javascript split method to get the name of the path in array
+  const splitLocation = pathname.split("/");
 
   const styleObj = {
     width: "17.5rem",
@@ -45,7 +56,11 @@ function SideBar(props) {
         <li className="nav-item">
           <Link
             to="/dashboard"
-            className="d-flex align-items-center nav-link active"
+            className={
+              splitLocation[2] == null
+                ? "d-flex align-items-center nav-link active"
+                : "d-flex align-items-center nav-link"
+            }
             aria-current="page"
           >
             <MdOutlineSpaceDashboard className="me-3" />
@@ -75,7 +90,11 @@ function SideBar(props) {
         <li className="nav-item">
           <Link
             to="/dashboard/product"
-            className="d-flex align-items-center nav-link link-dark"
+            className={
+              splitLocation[2] === "product"
+                ? "d-flex align-items-center nav-link link-dark active"
+                : "d-flex align-items-center nav-link link-dark"
+            }
           >
             <FiPackage className="me-3" />
             PRODUCTS
