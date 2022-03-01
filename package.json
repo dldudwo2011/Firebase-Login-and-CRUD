@@ -11,7 +11,6 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
@@ -22,9 +21,8 @@
   },
   "scripts": {
     "clean": "rm -rf node_modules build .git .env .DS_Store",
-    "static-netflify": "cp -rf ./src/static static",
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run static-netflify"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
