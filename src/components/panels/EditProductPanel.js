@@ -1,6 +1,4 @@
 import React from "react";
-
-import { Link } from "react-router-dom";
 import PlaceHolderImage from "assets/images/default.png";
 
 function EditPanel(props) {
@@ -16,7 +14,11 @@ function EditPanel(props) {
         <form id="shoesForm" class="col-lg-4 m-lg-auto">
           <div>
             <div class="display">
-              <img src={PlaceHolderImage} class="w-100 mb-3" alt="shoe-image" />
+              <img
+                src={PlaceHolderImage}
+                class="w-100 mb-3"
+                alt="placeholder"
+              />
             </div>
             <div class="form-group">
               <label for="shoeImage" class="d-block text-start mb-1">
