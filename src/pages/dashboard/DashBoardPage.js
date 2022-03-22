@@ -16,6 +16,7 @@ function DashBoardPage(props) {
       setIsUser(true);
     } else {
       setIsUser(false);
+      navigator("/");
     }
   });
 
