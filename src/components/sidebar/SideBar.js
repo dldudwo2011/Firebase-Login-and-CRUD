@@ -10,15 +10,22 @@ import { SiIconify } from "react-icons/si";
 
 import { AiOutlineShoppingCart, AiOutlineStar } from "react-icons/ai";
 
-import { BsPeople, BsHandThumbsUp } from "react-icons/bs";
+import { BsHandThumbsUp } from "react-icons/bs";
 
-import { IoIosPeople } from "react-icons/io";
+import { GrFormAdd, GrEdit } from "react-icons/gr";
 
 import { BiCategoryAlt, BiLogIn } from "react-icons/bi";
 
 import { FiPackage } from "react-icons/fi";
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import { signOut } from "firebase/auth";
+import { auth } from "libs/firebase";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { MdError } from "react-icons/md";
 
 function SideBar(props) {
   function clickHandler(e) {
@@ -29,6 +36,30 @@ function SideBar(props) {
       "position: absolute; inset: auto auto 0px 0px;margin: 0px; transform: translate(40px, -40px);"
     );
   }
+
+  const navigator = useNavigate();
+
+  function onClickSignOutHandler(e) {
+    signOut(auth)
+      .then(() => {
+        navigator("/");
+      })
+      .catch((error) => {
+        notify(error);
+      });
+  }
+
+  const notify = (error) =>
+    toast.error(error.code, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      icon: <MdError />,
+    });
 
   //assigning location variable
   const location = useLocation();
@@ -69,15 +100,29 @@ function SideBar(props) {
         </li>
         <hr />
         <li className="nav-item">
-          <Link to="#" className="d-flex align-items-center nav-link link-dark">
-            <BsPeople className="me-3" />
-            VENDORS
+          <Link
+            to="add"
+            className={
+              splitLocation[2] === "add"
+                ? "d-flex align-items-center nav-link link-dark active"
+                : "d-flex align-items-center nav-link link-dark"
+            }
+          >
+            <GrFormAdd className="me-3" />
+            Add New Product
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="#" className="d-flex align-items-center nav-link link-dark">
-            <IoIosPeople className="me-3" />
-            USERS
+          <Link
+            to="edit"
+            className={
+              splitLocation[2] === "edit"
+                ? "d-flex align-items-center nav-link link-dark active"
+                : "d-flex align-items-center nav-link link-dark"
+            }
+          >
+            <GrEdit className="me-3" />
+            Edit New Product
           </Link>
         </li>
         <hr />
@@ -88,14 +133,7 @@ function SideBar(props) {
           </Link>
         </li>
         <li className="nav-item">
-          <Link
-            to="/dashboard/product"
-            className={
-              splitLocation[2] === "product"
-                ? "d-flex align-items-center nav-link link-dark active"
-                : "d-flex align-items-center nav-link link-dark"
-            }
-          >
+          <Link to="#" className="d-flex align-items-center nav-link link-dark">
             <FiPackage className="me-3" />
             PRODUCTS
           </Link>
@@ -186,7 +224,11 @@ function SideBar(props) {
             <hr className="dropdown-divider" />
           </li>
           <li>
-            <Link className="dropdown-item" to="/">
+            <Link
+              className="dropdown-item"
+              onClick={onClickSignOutHandler}
+              to="/"
+            >
               Sign out
             </Link>
           </li>

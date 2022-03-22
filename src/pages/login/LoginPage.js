@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -8,14 +8,71 @@ import { FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
 
 import { FcGoogle } from "react-icons/fc";
 
+import { auth } from "libs/firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { MdError } from "react-icons/md";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 function LoginPage(props) {
-  let navigate = useNavigate();
+  let navigator = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function onSignInHandler(e) {
     e.preventDefault();
+
+    const emailInput = document.querySelector("#email").value;
+    const passwordInput = document.querySelector("#password").value;
+
+    if (!emailInput && !passwordInput) {
+      notify("Please enter email and password.");
+      return;
+    } else if (!passwordInput) {
+      notify("Please enter password.");
+      return;
+    } else if (!emailInput) {
+      notify("Please enter email.");
+      return;
+    }
+
     // Auth   password email
     // true go to the dashboard
-    navigate("/dashboard");
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        navigator("/dashboard");
+      })
+      .catch((error) => {
+        // add toast messages
+        notify(error);
+      });
+  }
+
+  function notify(error) {
+    if (error != null && typeof error == "string") {
+      toast.error(error, {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        icon: <MdError />,
+      });
+    } else {
+      toast.error(error.code, {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        icon: <MdError />,
+      });
+    }
   }
 
   const styleObj = {
@@ -25,6 +82,7 @@ function LoginPage(props) {
   return (
     <>
       <AppBar />
+      <ToastContainer />
       <section className="login d-flex align-items-center" style={styleObj}>
         <div className="container-fluid h-custom">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -68,7 +126,8 @@ function LoginPage(props) {
                 <div className="form-outline mb-4">
                   <input
                     type="email"
-                    id="form3Example3"
+                    id="email"
+                    onChange={(e) => setEmail(e.target.value)}
                     className="form-control form-control-lg"
                     placeholder="Enter a valid email address"
                   />
@@ -80,7 +139,8 @@ function LoginPage(props) {
                 <div className="form-outline mb-3">
                   <input
                     type="password"
-                    id="form3Example4"
+                    id="password"
+                    onChange={(e) => setPassword(e.target.value)}
                     className="form-control form-control-lg"
                     placeholder="Enter password"
                   />

@@ -4,7 +4,19 @@ import { Link } from "react-router-dom";
 
 import { AiOutlineRight } from "react-icons/ai";
 
+import { useNavigate } from "react-router-dom";
+
+import image1 from "assets/images/mercurial-superfly-8-elite-fg-football-boots-jZbl4T(1).jpg";
+
+import image2 from "assets/images/mercurial-vapor-14-elite-fg-football-boots-gSCd8q(2).jpg";
+
+import image3 from "assets/images/mercurial-vapor-14-elite-ag-artificial-ground-football-boots-nrsh5s.jpg";
+
+import image4 from "assets/images/mercurial-vapor-14-elite-sg-pro-anti-clog-traction-football-boots-WCZ2Sz(4).jpg";
+
 function Panels(props) {
+  const navigator = useNavigate();
+
   const styleObj = {
     height: "calc(100vh - 5rem)",
     marginLeft: "17.5rem",
@@ -13,6 +25,10 @@ function Panels(props) {
   const cardWidth = {
     width: "18rem",
   };
+
+  function onClickHandler() {
+    navigator("add");
+  }
 
   return (
     <div className="container-fluid p-5" style={styleObj}>
@@ -28,6 +44,7 @@ function Panels(props) {
           type="button"
           className="btn btn-primary btn-lg"
           style={{ paddingLeft: 40, paddingRight: 40 }}
+          onClick={onClickHandler}
         >
           Add Product
         </button>
@@ -39,11 +56,7 @@ function Panels(props) {
           className="container d-flex flex-wrap justify-content-center"
         >
           <div className="card mx-3 my-3" style={cardWidth}>
-            <img
-              className="card-img-top"
-              src="../../static/images/mercurial-superfly-8-elite-fg-football-boots-jZbl4T(1).jpg"
-              alt="foot-ball"
-            />
+            <img className="card-img-top" src={image1} alt="foot-ball" />
             <div className="card-body top">
               <p className="card-text text-info">Just In</p>
               <p></p>
@@ -72,11 +85,7 @@ function Panels(props) {
             </div>
           </div>
           <div className="card mx-3 my-3" style={cardWidth}>
-            <img
-              className="card-img-top"
-              src="../../static/images/mercurial-vapor-14-elite-fg-football-boots-gSCd8q(2).jpg"
-              alt="foot-ball"
-            />
+            <img className="card-img-top" src={image2} alt="foot-ball" />
             <div className="card-body top">
               <p className="card-text text-info">Just In</p>
               <p></p>
@@ -105,11 +114,7 @@ function Panels(props) {
             </div>
           </div>
           <div className="card mx-3 my-3" style={cardWidth}>
-            <img
-              className="card-img-top"
-              src="../../static/images/mercurial-vapor-14-elite-sg-pro-anti-clog-traction-football-boots-WCZ2Sz(4).jpg"
-              alt="foot-ball"
-            />
+            <img className="card-img-top" src={image4} alt="foot-ball" />
             <div className="card-body top">
               <p className="card-text text-info">Just In</p>
               <p></p>
@@ -140,11 +145,7 @@ function Panels(props) {
             </div>
           </div>
           <div className="card mx-3 my-3" style={cardWidth}>
-            <img
-              className="card-img-top"
-              src="../../static/images/mercurial-vapor-14-elite-ag-artificial-ground-football-boots-nrsh5s.jpg"
-              alt="foot-ball"
-            />
+            <img className="card-img-top" src={image3} alt="foot-ball" />
             <div className="card-body top">
               <p className="card-text text-info">Just In</p>
               <p></p>
