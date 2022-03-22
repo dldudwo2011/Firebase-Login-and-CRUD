@@ -8,11 +8,11 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAgP7AOT1dim5erJJXOnEs6V9cZnAsdHDY",
+  apiKey: process.env.STOREFRONT_FIREBASE_API_KEY,
   authDomain: process.env.STOREFRONT_FIREBASE_AUTH_DOMAIN,
-  databaseURL: "https://dmit2008-ed68c-default-rtdb.firebaseio.com",
+  databaseURL: process.env.STOREFRONT_FIREBASE_DATABASE_URL,
   projectId: process.env.STOREFRONT_FIREBASE_PROJECT_ID,
-  storageBucket: "dmit2008-ed68c.appspot.com",
+  storageBucket: process.env.STOREFRONT_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.STOREFRONT_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.STOREFRONT_FIREBASE_APP_ID,
 };
