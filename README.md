@@ -3,4 +3,4 @@
 Name: YoungjaeLee\
 Section: OA04\
 Instructor: Jim Foley\
-Purpose: Assignment repository
+Purpose: Assessment 2~ repository
