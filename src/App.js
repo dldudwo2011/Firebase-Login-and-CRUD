@@ -22,7 +22,7 @@ function App() {
           />
           <Route
             path="add"
-            element={<AddProductPanel title="Add New Product " />}
+            element={<AddProductPanel title="Add New Product" />}
           />
           <Route
             path="edit"

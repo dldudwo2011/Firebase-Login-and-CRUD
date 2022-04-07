@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
-import { useGetAllProducts } from "hooks/useGetAllProducts";
-import { ProductCard } from "components/products/ProductCard";
+import React from "react";
+
 import { Link } from "react-router-dom";
+
 import { AiOutlineRight } from "react-icons/ai";
+
 import { useNavigate } from "react-router-dom";
 
-function Panels({ title, ...props }) {
+import Home from "../../hooks/useGetAllProducts";
+
+export default function ViewPanelBody({ title, ...props }) {
   const navigator = useNavigate();
 
   const styleObj = {
@@ -17,16 +19,6 @@ function Panels({ title, ...props }) {
   function onClickHandler() {
     navigator("add");
   }
-
-  const [loading, setLoading] = useState(true);
-  const productData = useGetAllProducts();
-  useEffect(() => {
-    if (loading) {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
-    }
-  }, [loading]);
 
   return (
     <div className="container-fluid p-5" style={styleObj}>
@@ -53,16 +45,9 @@ function Panels({ title, ...props }) {
           id="shoe-cards"
           className="container d-flex flex-wrap justify-content-center"
         >
-          <ClipLoader color="red" loading={loading} css size={100} />
-          {!loading
-            ? productData.map((product) => (
-                <ProductCard key={product.key} product={product} />
-              ))
-            : null}
+          <Home />
         </div>
       </div>
     </div>
   );
 }
-
-export default Panels;
