@@ -12,10 +12,6 @@ import { useNavigate } from "react-router-dom";
 function EditorFeedBack({ children, status, writeCompleted, ...props }) {
   const navigator = useNavigate();
 
-  function onClickHandlerAdd() {
-    window.location.reload();
-  }
-
   function onClickHandlerViewAll() {
     navigator("dashboard");
   }
