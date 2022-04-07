@@ -19,8 +19,8 @@ function ProductCard({ children, product, ...props }) {
       </div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">{type}</li>
-        <li className="list-group-item">{numberOfColours}</li>
-        <li className="list-group-item">{price}</li>
+        <li className="list-group-item">{`${numberOfColours} Colour`}</li>
+        <li className="list-group-item">{`$${price}`}</li>
       </ul>
       <div className="card-body d-flex justify-content-evenly buttons">
         <button className="btn btn-primary" id="edit" data-key={key}>
