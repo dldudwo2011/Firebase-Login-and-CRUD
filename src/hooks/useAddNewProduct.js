@@ -17,7 +17,7 @@ function useAddNewProduct() {
       storage,
       `images/products/${imageFile.name}`
     );
-    const uploadRef = await uploadBytes(imageRef);
+    const uploadRef = await uploadBytes(imageRef, imageFile);
     const image = await getDownloadURL(imageRef);
     set(newRef, { ...productData });
 
