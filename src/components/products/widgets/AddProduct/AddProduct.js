@@ -30,14 +30,16 @@ function AddProduct({ children, ...props }) {
   const [productColors, setProductColors] = useState(defaults.color);
   const [loading, productLoader] = useAddNewProduct();
 
-  const formatter = useNumberFormat();
-
   function handleProductName(name) {
     setProductName(name);
   }
 
   function handleProductPrice(price) {
-    setProductPrice(formatter(price));
+    let val = price;
+    let maxLength = 3;
+    let newValue =
+      val <= maxLength ? val : parseInt(val.toString().substring(0, maxLength));
+    setProductPrice(newValue);
   }
   function handleProductDescription(description) {
     setProductDescription(description);

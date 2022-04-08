@@ -24,6 +24,7 @@ function ProductDataEntryForm({
   handleProductColors,
   handleSubmit,
   setProductImage,
+  productPrice,
   ...props
 }) {
   const options = [
@@ -62,8 +63,11 @@ function ProductDataEntryForm({
         <ProductPrice>
           <Label>Product Price</Label>
           <Input
+            className="priceInput"
             onChange={(e) => handleProductPrice(e.target.value.trim())}
-            maxLength={8}
+            type="number"
+            name="MyProp"
+            value={productPrice}
           />
         </ProductPrice>
       </fieldset>
