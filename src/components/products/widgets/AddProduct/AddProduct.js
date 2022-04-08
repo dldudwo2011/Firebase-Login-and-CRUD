@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { EditProductStyles } from "./styles";
 import { ProductEditor } from "components/products/ProductEditor";
-import { useNumberFormat } from "hooks/useNumberFormat";
 import PlaceHolderImage from "assets/images/default.png";
 import { useAddNewProduct } from "hooks/useAddNewProduct";
 import { EditorFeedBack } from "components/products/EditorFeedBack";
