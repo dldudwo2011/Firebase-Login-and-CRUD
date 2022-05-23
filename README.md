@@ -2,8 +2,8 @@
 
 ## How to test
 
-Log in as following credentials
+1. Log in as following credentials
 - Account name: jim@home.com
 - Password: 123456
 
-Then, test the Create and Read functionalities. Edit and Delete are about to be implemented.
+2. Test the Create and Read functionalities. Edit and Delete are about to be implemented.
