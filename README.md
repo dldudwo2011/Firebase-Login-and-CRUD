@@ -1,6 +1,6 @@
 # DMIT2008
 
-How to test
+## How to test
 
 Log in as following credentials
 - Account name: jim@home.com
