@@ -1,4 +1,4 @@
-# DMIT2008
+# Firebase-Login-and-CRUD
 
 ## How to test
 
