@@ -36,7 +36,6 @@ function ProductCard({ children, product, ...props }) {
       <ul className="list-group list-group-flush">
         <li className="list-group-item">{type}</li>
         <li className="list-group-item">
-          $
           {numberOfColours > 1
             ? `${numberOfColours} Colours`
             : `${numberOfColours} Colour`}
