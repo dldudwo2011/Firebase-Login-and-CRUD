@@ -12,7 +12,7 @@ import { AiOutlineShoppingCart, AiOutlineStar } from "react-icons/ai";
 
 import { BsHandThumbsUp } from "react-icons/bs";
 
-import { GrFormAdd, GrEdit } from "react-icons/gr";
+import { GrFormAdd } from "react-icons/gr";
 
 import { BiCategoryAlt, BiLogIn } from "react-icons/bi";
 
