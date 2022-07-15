@@ -112,19 +112,6 @@ function SideBar(props) {
             Add New Product
           </Link>
         </li>
-        <li className="nav-item">
-          <Link
-            to="edit"
-            className={
-              splitLocation[2] === "edit"
-                ? "d-flex align-items-center nav-link link-dark active"
-                : "d-flex align-items-center nav-link link-dark"
-            }
-          >
-            <GrEdit className="me-3" />
-            Edit New Product
-          </Link>
-        </li>
         <hr />
         <li className="nav-item">
           <Link to="#" className="d-flex align-items-center nav-link link-dark">
